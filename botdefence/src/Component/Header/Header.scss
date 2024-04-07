@@ -1,0 +1,89 @@
+@import '../../Assets/Scss/import';
+
+.header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 8fr 1fr 1fr;
+    background-color: $darkDetail;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom: solid 8px $detail;
+    justify-items: center;
+    align-content: center;
+    height: 100px;
+
+    h1, h3 {
+        color: $lightDetail;
+        margin: 0;
+    }
+
+    h3 {
+        margin-bottom: 10px;
+    }
+
+    &-icon {
+        justify-content: center;
+        display: flex;
+    }
+
+   &-item {
+        grid-row: 1;
+        align-self: center;
+    }
+
+    &-type {
+        grid-column: 1;
+    }
+
+    &-nextType {
+        grid-column: 2;
+    }
+
+    &-title {
+        grid-column: 3;
+    }
+
+    &-health {
+        grid-column: 4;
+
+        h3 {
+            margin-top: 10px;
+            margin-bottom: 0px;
+        }
+    }
+
+    &-round {
+        grid-column: 5;
+
+        p {
+            margin: 0;
+            height: 32px;
+            font-size: 32px;
+            @include workbench;
+            text-align: center;
+        }
+    }
+
+    .health {
+        color: $health;
+    }
+
+    .basic {
+        color: $basic;
+    }
+
+    .water {
+        color: $water;
+    }
+
+    .rock {
+        color: $rock;
+    }
+
+    .electric {
+        color: $electric;
+    }
+
+    .fire {
+        color: $fire;
+    }
+}

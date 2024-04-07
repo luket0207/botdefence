@@ -1,0 +1,23 @@
+$text: #EEE;
+
+h1, h2, h3, h4, h5, button {
+    color: $text;
+    font-family: "Londrina Solid", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+p {
+    color: $text;
+    font-family: "Londrina Solid", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+@mixin workbench {
+    font-family: "Workbench", sans-serif !important;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "BLED" 0, "SCAN" 0;
+}

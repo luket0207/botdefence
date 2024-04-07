@@ -1,0 +1,63 @@
+@import '../../Assets/Scss/import';
+
+.grid {
+    $size: 240px;
+
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin: 10px auto 0px;
+    width: 1200px;
+    transform-origin: top center;
+    transform: scale(0.5);
+    transition: all 0.2s ease;
+    position: relative;
+    top: 0px;
+    
+    &-bot {
+        width: $size;
+        height: $size;
+        display: flex;
+        justify-content: center;
+        position: relative;
+
+        img {
+            height: 90%;
+            margin-top: 5%;
+        }
+
+        &-bg {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: -1;
+
+            &.water {
+                background: radial-gradient(circle, $water 0%, rgba(240,240,240,0) 70%);
+                color: $water;
+            }
+
+            &.rock {
+                background: radial-gradient(circle, $rock 0%, rgba(240,240,240,0) 70%);
+                color: $rock;
+            }
+
+            &.electric {
+                background: radial-gradient(circle, $electric 0%, rgba(240,240,240,0) 70%);
+                color: $electric;
+            }
+
+            &.fire {
+                background: radial-gradient(circle, $fire 0%, rgba(240,240,240,0) 70%);
+                color: $fire;
+            }
+        }
+    }
+
+    &.active {
+        transform: scale(1);
+        top: 70px;
+    }
+}

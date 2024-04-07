@@ -1,0 +1,177 @@
+@import '../../Assets/Scss/import';
+
+.track {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  width: 1500px;
+  height: 230px;
+  margin-left: 30px;
+  
+
+  &-door {
+    width: 26px;
+    height: 146px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    border: solid 2px $detail;
+    font-size: 14px;
+    text-transform: uppercase;
+    z-index: 10;
+    background: repeating-linear-gradient(
+      45deg,
+      $detail,
+      $detail 10px,
+      $darkDetail 10px,
+      $darkDetail 20px
+    );
+
+    p {
+      writing-mode: vertical-lr;
+      text-orientation: upright;
+      letter-spacing: -4px;
+      margin: 0;
+      background: #111111;
+      padding: 10px 2px;
+      border-radius: 5px;
+    }
+
+    &.entrance {
+      right: 0px;
+    }
+
+    &.exit {
+      left: -30px;
+    }
+  }
+
+  .bug-container {
+    position: relative;
+    height: 150px;
+    background: repeating-linear-gradient(
+    45deg,
+      $background,
+      $background 10px,
+      $darkDetail 10px,
+      $darkDetail 20px
+    );
+  }
+
+  .bug {
+    position: absolute;
+    top: 63%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    transition: left ease, opacity 0.3s ease;
+
+    &-health {
+      position: absolute;
+      top: -40px;
+      font-size: 28px;
+      height: 16px;
+      width: 40px;
+      text-align: center;
+      @include workbench;
+
+      p {
+        margin: 0;
+        text-align: center;
+      }
+
+      &-dead {
+        color: $health;
+      }
+    }
+
+    &-image {
+      transform: rotate(-90deg);
+    }
+
+    &.basic {
+      .bug-health {
+        color: $basic;
+      }
+
+      .bug-image svg {
+        color: $basic;
+      }
+    }
+
+    &.water {
+      .bug-health {
+        color: $water;
+      }
+
+      .bug-image svg {
+        color: $water;
+      }
+    }
+
+    &.rock {
+      .bug-health {
+        color: $rock;
+      }
+
+      .bug-image svg {
+        color: $rock;
+      }
+    }
+
+    &.electric {
+      .bug-health {
+        color: $electric;
+      }
+
+      .bug-image svg {
+        color: $electric;
+      }
+    }
+
+    &.fire {
+      .bug-health {
+        color: $fire;
+      }
+
+      .bug-image svg {
+        color: $fire;
+      }
+    }
+  }
+
+  .hidden {
+    opacity: 0;
+  }
+
+  .dead {
+    opacity: 0;
+    .bug-image svg {
+      color: $health !important;
+    }
+  }
+
+  .complete {
+    opacity: 0;
+    .bug-image svg {
+      color: $green !important;
+    }
+  }
+
+  .controls {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    margin-right: 30px;
+
+    button {
+      margin-right: 20px;
+    }
+  }
+
+  .bugs-completed {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+}
